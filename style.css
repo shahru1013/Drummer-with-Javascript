@@ -1,7 +1,25 @@
+/*
+  @author : Shahru
+*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body{
 	background-image: url(bg.jpeg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-color: black;
+}
+@media screen and (max-width: 700px){
+    
+    #allKeyid{
+    width: 95%;
+    margin-top: 10vh;
+    }
+    
 }
 .allKey{
 	display: flex;
@@ -40,14 +58,14 @@ body{
 	
 }
 .playing{
-	transform: scale(2);
+	transform: scale(1.4);
 	border-color: #C39BD3;
 	box-shadow: 5px 5px 10px #C39BD3;
 }
 
 .haha{
 	
-	margin-left: 40vw;
+	margin-left: 30vw;
 }
 .haha p{
 	font-size: 20px;
