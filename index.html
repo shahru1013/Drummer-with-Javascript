@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I don't know what is this 😀</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="haha">
+	<p id="music">Music is Love , Make it...</p>
+</div>
+<div class="allKey">
+   <div class="btn" data-key="65">
+      <p>A</p>
+      <span>Clap</span>
+   </div>
+   <div class="btn" data-key="66">
+      <p>B</p>
+      <span>Boom</span>
+   </div>
+   <div class="btn" data-key="67">
+      <p>C</p>
+      <span>Crash</span>
+   </div>
+   <div class="btn" data-key="68">
+      <p>D</p>
+      <span>D-FX</span>
+   </div>
+   <div class="btn" data-key="69">
+      <p>E</p>
+      <span>Explosion</span>
+   </div>
+   <div class="btn" data-key="70">
+      <p>F</p>
+      <span>Fall</span>
+   </div>
+   <div class="btn" data-key="71">
+      <p>G</p>
+      <span>Drum</span>
+   </div>
+   <div class="btn" data-key="72">
+      <p>H</p>
+      <span>Hard Kick</span>
+   </div>
+   <div class="btn" data-key="73">
+      <p>I</p>
+      <span>FX</span>
+   </div>
+   <div class="btn" data-key="74">
+      <p>J</p>
+      <span>Hihat</span>
+   </div>
+   <div class="btn" data-key="75">
+      <p>K</p>
+      <span>Kick</span>
+   </div>
+   <div class="btn" data-key="76">
+      <p>L</p>
+      <span>Clap-Snare</span>
+   </div>
+   <div class="btn" data-key="77">
+      <p>M</p>
+      <span>Kick-30</span>
+   </div>
+   <div class="btn" data-key="78">
+      <p>N</p>
+      <span>Noise</span>
+   </div>
+   <div class="btn" data-key="79">
+      <p>O</p>
+      <span>N-Tom</span>
+   </div>
+   <div class="btn" data-key="80">
+      <p>P</p>
+      <span>Perc</span>
+   </div>
+   <div class="btn" data-key="81">
+      <p>Q</p>
+      <span>Fall-FX</span>
+   </div>
+   <div class="btn" data-key="82">
+      <p>R</p>
+      <span>Rev</span>
+   </div>
+   <div class="btn" data-key="83">
+      <p>S</p>
+      <span>Short-FX</span>
+   </div>
+   <div class="btn" data-key="84">
+      <p>T</p>
+      <span>Thunder</span>
+   </div>
+   <div class="btn" data-key="85">
+      <p>U</p>
+      <span>Rise</span>
+   </div>
+   <div class="btn" data-key="86">
+      <p>V</p>
+      <span>SyhTom</span>
+   </div>
+   <div class="btn" data-key="87">
+      <p>W</p>
+      <span>Rev-4</span>
+   </div>
+   <div class="btn" data-key="88">
+      <p>X</p>
+      <span>Crash</span>
+   </div>
+</div>
+	<audio src="sound/Clap3.wav" data-key="65"></audio>
+	<audio src="sound/Boom1.wav" data-key="66"></audio>
+	<audio src="sound/Crash_11.wav" data-key="67"></audio>
+	<audio src="sound/D_FX2.WAV" data-key="68"></audio>
+	<audio src="sound/Explosion.wav" data-key="69"></audio>
+	<audio src="sound/Snare_39.wav" data-key="70"></audio>
+	<audio src="sound/SynthTom01.wav" data-key="71"></audio>
+	<audio src="sound/Conga_1.wav" data-key="72"></audio>
+	<audio src="sound/Hard_Kick_1.wav" data-key="73"></audio>
+	<audio src="sound/FX1.wav" data-key="74"></audio>
+	<audio src="sound/Hihat_5_closed.wav" data-key="75"></audio> <!-- k !-->
+	<audio src="sound/Clap+Snare.wav" data-key="76"></audio>
+	<audio src="sound/Kick_30.wav" data-key="77"></audio>
+	<audio src="sound/Noise.wav" data-key="78"></audio>
+	<audio src="sound/N-Tom1.wav" data-key="79"></audio> <!-- O !-->
+	<audio src="sound/Perc10.wav" data-key="80"></audio>
+	<audio src="sound/FALL_FX15.wav" data-key="81"></audio>
+	<audio src="sound/Rev_4.wav" data-key="82"></audio>
+	<audio src="sound/Short_FX_1.wav" data-key="83"></audio>
+	<audio src="sound/Thunder_1.wav" data-key="84"></audio>
+	<audio src="sound/Rise_FX9.wav" data-key="85"></audio><!-- U !-->
+	<audio src="sound/Syhtom02.wav" data-key="86"></audio>
+	<audio src="sound/Rev_4.wav" data-key="87"></audio>
+	<audio src="sound/Crash_3.wav" data-key="88"></audio>
+	<script>
+	    
+
+       function playAudio(e) {
+       	var audi = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+           var anim = document.querySelector(`.btn[data-key="${e.keyCode}"]`);
+           if(!audi) return;
+           audi.currentTime=0;
+           audi.play();
+           anim.classList.add('playing');
+            anim.classList.remove('playing');
+             anim.classList.toggle('playing');
+            var nm = document.getElementById("music");
+	        nm.classList.add('playing');
+            nm.classList.remove('playing');
+             nm.classList.toggle('playing');
+       }
+
+		function removeAnimation(e) {
+			this.classList.remove('playing');
+		}
+
+		var removeAnim = document.querySelectorAll('.btn');
+		for(i = 0;i<removeAnim.length;i++){
+			removeAnim[i].addEventListener('transitionend',removeAnimation);
+		}
+        window.addEventListener('keydown',playAudio);
+		
+	</script>
+
+ 	 <p style="display: block; text-align: right; color: #E6B0AA ; font-size: 20px; margin-top: 25px; padding: 10px;">@Creator : Shahru 👺</p>
+
+</body>
+</html>

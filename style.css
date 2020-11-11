@@ -1,0 +1,57 @@
+body{
+	background-image: url(bg.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.allKey{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 53%;
+    margin-top: 30vh;
+}
+.btn{
+	background-color: #34495E;
+	color: white;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color:#D98880 ;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 3px;
+	height: 60px;
+	width: auto;
+	opacity: 0.8;
+	transition: all 0.3s;
+}
+.btn p{
+	margin: 0;
+	margin-left: 10px;
+	font-size: 20px;
+	padding: 10px;
+}
+.btn span{
+	margin-left:10px;
+	margin-right: 10px;
+	color: #C39BD3;
+	
+}
+.playing{
+	transform: scale(2);
+	border-color: #C39BD3;
+	box-shadow: 5px 5px 10px #C39BD3;
+}
+
+.haha{
+	
+	margin-left: 40vw;
+}
+.haha p{
+	font-size: 20px;
+	color: #D6DBDF;
+	font-family: fantasy;
+}
+
