@@ -1,5 +1,6 @@
 <!--
   @author : Shahru
+  drummer project
 !-->
 
 <!DOCTYPE html>
@@ -8,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>I don't know what is this 😀</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
 </head>
 <body>
 <div class="haha">
@@ -138,61 +140,8 @@
 	<audio src="sound/SyhTom02.wav" data-key="86"></audio>
 	<audio src="sound/Rev_4.wav" data-key="87"></audio>
 	<audio src="sound/Crash_3.WAV" data-key="88"></audio>
-	<script>
-	
 
-       function playAudio(e) {
-       	   var audi = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-           var anim = document.querySelector(`.btn[data-key="${e.keyCode}"]`);
-           if(!audi) return;
-           audi.currentTime=0;
-           audi.play();
-           anim.classList.add('playing');
-            anim.classList.remove('playing');
-             anim.classList.toggle('playing');
-            var nm = document.getElementById("music");
-	        nm.classList.add('playing');
-            nm.classList.remove('playing');
-             nm.classList.toggle('playing');
-       }
-
-		function removeAnimation(e) {
-			this.classList.remove('playing');
-		}
-
-		var removeAnim = document.querySelectorAll('.btn');
-		var btnClick = document.querySelectorAll(".btn");
-			for(i = 0;i<btnClick.length;i++){
-			btnClick[i].addEventListener('click',playByClick);
-		}
-
-        function playByClick(clickedCellEvent) {
-        	  const clickedCell = clickedCellEvent.target;
-              var num = clickedCell.getAttribute('data-key');
-           var audi = document.querySelector(`audio[data-key="${num}"]`);
-           var anim = document.querySelector(`.btn[data-key="${num}"]`);
-           if(!audi) return;
-           audi.currentTime=0;
-           audi.play();
-           anim.classList.add('playing');
-            anim.classList.remove('playing');
-             anim.classList.toggle('playing');
-            var nm = document.getElementById("music");
-	        nm.classList.add('playing');
-            nm.classList.remove('playing');
-             nm.classList.toggle('playing');
-
-        }
-
-		for(i = 0;i<removeAnim.length;i++){
-			removeAnim[i].addEventListener('transitionend',removeAnimation);
-		}
-	
-        window.addEventListener('keydown',playAudio);
-
-	</script>
-
- 	 <p style="display: block; text-align: right; color: #E6B0AA ; font-size: 20px; margin-top: 25px; padding: 10px;">@Creator : Shahru 👺</p>
+<p style="display: block; text-align: right; color: #E6B0AA ; font-size: 20px; margin-top: 25px; padding: 10px;">@Creator : Shahru 👺</p>
 
 </body>
 </html>
