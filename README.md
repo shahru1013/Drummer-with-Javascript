@@ -1,2 +1,2 @@
 # PracticeJs
-Its a practice project!!
+Basic fun type drummer sounds by Javascript!
